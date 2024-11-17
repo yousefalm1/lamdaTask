@@ -20,7 +20,7 @@ public class SuggestionController {
 
     @PostMapping
     public ResponseEntity<String> handleSuggestion(@RequestBody CreateSuggestionRequest request) {
-        guestSuggestionService.printAndProcessSuggestion(request.getSuggestionText(), request.getRate());
+        guestSuggestionService.printAndProcessSuggestion(request.getSuggestionText(), request.getRate(), request.getStatus());
         return ResponseEntity.ok("Suggestion processed successfully!");
     }
 
